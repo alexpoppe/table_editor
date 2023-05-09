@@ -1,0 +1,5 @@
+Faker==18.6.2
+Flask==2.3.2
+Flask_FontAwesome==0.1.5
+pandas==2.0.1
+python-dotenv==1.0.0
