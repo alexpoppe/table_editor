@@ -1,0 +1,12 @@
+.save {
+    visibility: hidden;
+}
+
+.edit {
+    visibility: visible;
+}
+
+.remove {
+    visibility: visible;
+}
+

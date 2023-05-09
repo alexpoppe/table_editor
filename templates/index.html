@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        {% for column in columns %}
+            <th>{{column}}</th>
+        {% endfor %}
+    
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for content in contents %}
+        {% set outer_loop = loop %}
+        <tr>
+          <td>{{loop.index}}</td>
+        {% for column in columns %}
+        <td contenteditable="false" class="table-content-{{outer_loop.index}}">{{ content[column] }}</td>
+        {% endfor %}
+          <td>
+            <button type="submit" class="edit" id="edit-button-{{loop.index}}" onclick="edit_row('{{loop.index}}')">
+                <i class="fas fa-edit"></i> 
+            </button>
+
+            <button type="submit" class="save" id="save-button-{{loop.index}}" onclick="save_row('{{loop.index}}')">
+                <i class="fas fa-save"></i>
+            </button>
+
+            
+            
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
